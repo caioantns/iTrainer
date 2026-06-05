@@ -29,7 +29,6 @@ COPY --from=frontend-build /app/build ./build
 
 # Dir persistente p/ fotos. Coolify monta volume em /app/backend/uploads.
 RUN mkdir -p /app/backend/uploads/fotos && chown -R node:node /app/backend/uploads
-VOLUME ["/app/backend/uploads"]
 
 USER node
 ENV NODE_ENV=production

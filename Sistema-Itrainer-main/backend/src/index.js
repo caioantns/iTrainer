@@ -14,8 +14,12 @@ const app = express();
 const PORT = Number(process.env.PORT || 3001);
 
 // CORS_ORIGIN aceita CSV. Em prod CORS_ORIGIN obrigatorio.
-const corsOriginRaw = process.env.CORS_ORIGIN || 'http://localhost:3000';
-const corsOrigins = corsOriginRaw.split(',').map((s) => s.trim()).filter(Boolean);
+const allowedOrigins = process.env.CORS_ORIGIN 
+  ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim()) 
+  : ['http://localhost:3000', 'http://localhost:5173'];
+const corsOrigins = process.env.CORS_ORIGIN 
+  ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim()) 
+  : [];
 
 app.set('trust proxy', 1);
 app.disable('x-powered-by');
@@ -66,12 +70,18 @@ app.use('/uploads', express.static(uploadsPath, {
 }));
 
 app.use(cors({
-  origin: (origin, cb) => {
-    // Same-origin (sem header Origin) ou whitelisted
-    if (!origin || corsOrigins.includes(origin)) return cb(null, true);
-    return cb(new Error('CORS bloqueado: origem nao permitida'));
+  origin: function (origin, callback) {
+    // Permite requisições sem origem (como aplicativos mobile ou ferramentas de teste)
+    if (!origin) return callback(null, true);
+    
+    // Verifica se a URL do navegador está na lista de permissões ou se o CORS está liberado geral
+    if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes('*')) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS bloqueado: origem nao permitida'));
+    }
   },
-  credentials: true,
+  credentials: true // Essencial para o iTrainer gerenciar os cookies de sessão e login
 }));
 
 app.use(cookieParser());
