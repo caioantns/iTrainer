@@ -1,0 +1,106 @@
+.floating-label-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.floating-input {
+    width: 100%;
+    padding: 20px 15px 10px 15px;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.floating-input:focus {
+    border-color: var(--color-primary);
+    background: var(--color-bg);
+}
+
+.floating-label-input.focused .floating-input {
+    border-color: var(--color-primary);
+}
+
+.floating-label-input.error .floating-input {
+    border-color: var(--color-error);
+}
+
+.floating-label-input.valid .floating-input {
+    border-color: var(--color-success);
+}
+
+.floating-label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: var(--color-bg);
+    padding: 0 5px;
+}
+
+.floating-label.floating {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    transform: translateY(-50%);
+}
+
+.floating-label-input.error .floating-label.floating {
+    color: var(--color-error);
+}
+
+.floating-label-input.valid .floating-label.floating {
+    color: var(--color-success);
+}
+
+.required {
+    color: var(--color-error);
+    margin-left: 2px;
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+
+.valid-icon {
+    color: var(--color-success);
+}
+
+.error-icon {
+    color: var(--color-error);
+}
+
+.error-message {
+    display: block;
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+.dark-mode .floating-input {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+}
+
+.dark-mode .floating-label {
+    background: var(--color-bg-secondary);
+}
+
+
+

@@ -1,0 +1,194 @@
+.planos-container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--color-bg);
+  min-height: calc(100vh - 140px);
+}
+
+.planos-header {
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.plano-card {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 20px;
+  background: var(--color-bg-secondary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.dark-mode .plano-card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.plano-card.recommended {
+  border: 2px solid #667eea;
+  box-shadow: 0 6px 16px rgba(102,126,234,0.2);
+  position: relative;
+}
+
+.badge-recommended {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: #667eea;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.plano-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.plano-price {
+  font-size: 18px;
+  color: var(--color-success);
+  margin-bottom: 12px;
+}
+
+.plano-features {
+  margin: 10px 0 16px;
+  padding-left: 18px;
+}
+
+.plano-action {
+  display: flex;
+  gap: 10px;
+}
+
+.plano-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.plano-btn.assinar {
+  background: #007bff;
+  color: #fff;
+}
+
+.plano-btn.gerenciar {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.plano-atual {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.feature-compare {
+  margin-top: 28px;
+  background: var(--color-bg-secondary);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+.dark-mode .feature-compare {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border: 1px solid var(--color-border);
+}
+
+.compare-table { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; }
+.compare-head { display: contents; }
+.compare-row { display: contents; }
+.compare-cell { padding: 10px; border-bottom: 1px dashed var(--color-border); color: var(--color-text); }
+.compare-cell.head { font-weight: 700; color: var(--color-text); border-bottom: 2px solid var(--color-border); }
+.compare-cell.center { text-align: center; }
+.check { color: #22c55e; font-weight: 700; }
+.minus { color: #bbb; font-weight: 700; }
+.commission { font-weight: 600; }
+.commission.basic { color: #ef4444; }
+.commission.premium { color: #22c55e; }
+
+/* Modal de checkout */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal-content { background: var(--color-bg); border-radius: 12px; padding: 20px; width: 95%; max-width: 520px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+.dark-mode .modal-content { box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.modal-title { margin: 0 0 12px; font-size: 20px; color: var(--color-text); }
+.modal-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+.modal-field label { color: var(--color-text); }
+.modal-field input { padding: 10px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-bg-secondary); color: var(--color-text); }
+.modal-field input:focus { outline: none; border-color: var(--color-primary); background: var(--color-bg); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
+.btn { padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; }
+.btn-primary { background: var(--gradient-primary); color: #fff; }
+.btn-secondary { background: var(--color-bg-secondary); color: var(--color-text); }
+
+.modal-field textarea {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  font-family: inherit;
+  resize: vertical;
+}
+
+.aviso-demo {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 193, 7, 0.12);
+  border-left: 3px solid #ffc107;
+  color: var(--color-text-secondary);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.plano-card.plano-demo {
+  opacity: 0.85;
+  position: relative;
+}
+
+.badge-demo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ffc107;
+  color: #333;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.plano-autor {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 6px 0;
+}
+
+.plano-desc {
+  color: var(--color-text-secondary);
+}
+
+.plano-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .planos-container {
+    padding: 12px;
+  }
+}

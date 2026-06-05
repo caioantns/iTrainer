@@ -1,0 +1,17 @@
+node_modules
+build
+.git
+.gitignore
+.env
+.env.local
+backend/node_modules
+backend/.env
+backend/data
+backend/uploads
+**/.DS_Store
+**/Thumbs.db
+iTrainerPraticas-main
+db-old
+sistema-old
+*.log
+npm-debug.log*

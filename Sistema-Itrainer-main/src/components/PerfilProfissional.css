@@ -1,0 +1,46 @@
+.perfil-prof-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+.perfil-header { display: grid; grid-template-columns: 240px 1fr; gap: 24px; background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:20px; }
+.perfil-foto { width: 100%; height: 240px; object-fit: cover; border-radius:12px; }
+.perfil-info h1 { margin:0; }
+.perfil-cref, .perfil-local { color:#666; }
+.perfil-bio { margin-top:10px; color:#333; }
+.perfil-pacotes { display:flex; gap:10px; margin:10px 0 20px; }
+.pacote { background:#fafbfc; border:1px solid #eee; border-radius:8px; padding:10px 12px; display:flex; gap:8px; align-items:center; }
+
+.perfil-galeria { margin-top:24px; background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:20px; }
+.depo-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; }
+.depo-item { border:1px solid #eee; border-radius:8px; padding:12px; background:#fafbfc; }
+
+.modal { position: fixed; inset:0; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; }
+.modal-content { background:#fff; border-radius:12px; padding:20px; width: 90%; max-width: 420px; display:flex; flex-direction:column; gap:10px; }
+.modal-content label { display:flex; flex-direction:column; gap:6px; color:#333; }
+.modal-content select { padding:10px; border:2px solid #e9ecef; border-radius:10px; background:#f8f9fa; }
+.modal-actions { display:flex; justify-content:flex-end; gap:10px; }
+
+@media (max-width:768px){ .perfil-header { grid-template-columns: 1fr; } .perfil-foto { height: 200px; } }
+/* Dark mode */
+.dark-mode .perfil-header,
+.dark-mode .perfil-galeria,
+.dark-mode .modal-content {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.dark-mode .perfil-cref,
+.dark-mode .perfil-local,
+.dark-mode .perfil-bio,
+.dark-mode .modal-content label {
+  color: var(--color-text-secondary);
+}
+.dark-mode .pacote,
+.dark-mode .depo-item {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.dark-mode .modal-content select,
+.dark-mode .modal-content input {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}

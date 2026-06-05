@@ -1,0 +1,151 @@
+.editar-perfil {
+  background: var(--color-bg, #fff);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.editar-perfil h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: var(--color-text, #222);
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perfil-foto-edit {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+.perfil-foto-edit img,
+.perfil-foto-edit .foto-placeholder {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--color-bg-secondary, #f5f5f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #888);
+  font-size: 13px;
+}
+.perfil-foto-edit input[type="file"] {
+  font-size: 14px;
+  color: var(--color-text, #222);
+}
+
+.campos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.campos-grid label,
+.bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text-secondary, #555);
+}
+.campos-grid input,
+.campos-grid select,
+.bloco textarea,
+.bloco input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #222);
+}
+.campos-grid input:focus,
+.campos-grid select:focus,
+.bloco textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.checkbox-row {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+.checkbox-row input { width: auto; }
+
+.label-bloco {
+  font-size: 14px;
+  color: var(--color-text-secondary, #555);
+  margin-bottom: 4px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-bg-secondary, #f0f0f0);
+  border: 1px solid var(--color-border, #ddd);
+  color: var(--color-text, #222);
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: capitalize;
+  transition: background 0.2s, border-color 0.2s;
+}
+.chip:hover {
+  border-color: #4a90e2;
+}
+.chip.on {
+  background: #4a90e2;
+  border-color: #4a90e2;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .campos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode */
+.dark-mode .editar-perfil {
+  background: var(--color-bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.dark-mode .perfil-foto-edit {
+  border-bottom-color: var(--color-border);
+}
+.dark-mode .perfil-foto-edit img,
+.dark-mode .perfil-foto-edit .foto-placeholder {
+  background: var(--color-bg-tertiary);
+}
+.dark-mode .campos-grid input,
+.dark-mode .campos-grid select,
+.dark-mode .bloco textarea,
+.dark-mode .bloco input {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.dark-mode .chip {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.dark-mode .chip.on {
+  background: #4a90e2;
+  color: #fff;
+}
